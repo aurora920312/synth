@@ -35,4 +35,5 @@ if __name__ == "__main__":
         datetime.fromisoformat(simulation_input.start_time),
         "0",
     )
+    print(prediction[0])
     print(format_validation)
