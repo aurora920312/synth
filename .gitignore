@@ -202,6 +202,7 @@ ENV/
 env.bak/
 venv.bak/
 bt_venv
+sn50_venv/
 
 # Spyder project settings
 .spyderproject
