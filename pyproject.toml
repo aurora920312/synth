@@ -1,22 +1,11 @@
-[tool.black]
-line-length = 79
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | env
-  | venv
-  | bt_venv
-  | .eggs
-)/
-'''
+[project]
+name = "agentic"
+version = "0.1.0"
+description = "A full-featured ReAct-style Python agent with tools and logging"
+authors = [{name = "Cursor Agent", email = "agent@example.com"}]
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = []
 
-[tool.mypy]
-disable_error_code = ["import-untyped", "attr-defined"]
+[project.scripts]
+agentic = "agentic.cli:main"
