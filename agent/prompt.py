@@ -4,7 +4,10 @@ from typing import List
 def build_system_prompt(tools_spec: List[dict]) -> str:
     tool_lines = []
     for t in tools_spec:
-        tool_lines.append(f"- name: {t['name']} — {t['description']}")
+        args_schema = t.get('args') or {}
+        tool_lines.append(
+            f"- name: {t['name']} — {t['description']}\n  args_schema: {args_schema}"
+        )
     tools_help = "\n".join(tool_lines)
 
     return f"""
@@ -35,4 +38,5 @@ Conventions:
 - When listing or searching, narrow scope with arguments.
 - When writing files, include full content; don't say 'pseudo-code'.
 - Stop with a final answer when the user goal is met; include clear summary and any follow-ups in the final message.
+- When action.type == "final", include a top-level field "final" with the final answer string.
 """.strip()
