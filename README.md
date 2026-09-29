@@ -5,7 +5,7 @@
 </div>
 
 <h1 align="center">
-    Synth Subnet
+    Synth Subnet with AUROAR
 </h1>
 
 <div align="center">
